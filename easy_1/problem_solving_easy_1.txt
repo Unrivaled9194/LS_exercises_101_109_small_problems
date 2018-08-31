@@ -50,18 +50,26 @@ ALGORITHM
 - #3 -
 UNDERSTAND PROBLEM
 Notes:
-
-Questions:
+- create a method that takes
+  - one positive integer
+- returns
+  - an array of the digits in the integer
 
 EXAMPLES / TEST CASES
-
-Questions:
+digit_list(12345)  => [1, 2, 3, 4, 5]
+digit_list(7)      => [7]
+digit_list(375290) => [3, 7, 5, 2, 9, 0]
+digit_list(444)    => [4, 4, 4]
 
 DATA STRUCTURE
+- use a string data structure to take advantage of #split
+- use a array data structure to use #collect
 
 ALGORITHM
-
-ABSTRACTION
+- pass integer to method
+- convert integer into a string
+- split resulting string into an array
+- collect all values in the array and convert into integers
 
 UNDERSTAND PROBLEM
 Notes:
