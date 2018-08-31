@@ -1,0 +1,124 @@
+- #1 Repeat Yourself -
+UNDERSTAND PROBLEM
+Notes:
+- create method that takes 
+  - 1 integer
+  - 1 string
+- outputs 
+  - prints the string as many times as the value of the integer
+
+EXAMPLES / TEST CASES
+Input / Output:
+
+Test Cases:
+repeat('Hello', 3)        => 'Hello'
+		          => 'Hello'
+                          => 'Hello'
+repeat('Goodbye Bob', 2)  => 'Goodbye Bob'
+                          => 'Goodbye Bob'
+repeat('Nothing', 0)      => ''
+
+
+
+- #2 Odd-
+UNDERSTAND PROBLEM
+Notes:
+- create a method that takes 
+  - 1 integer
+  - can be positive, negative, or zero
+- returns
+  - TRUE if integers absolute value is odd
+- can assume that argument is a valid integer
+- not allowed to use #odd? or #even? methods
+
+EXAMPLES / TEST CASES
+puts is_odd?(2)    => false
+puts is_odd?(5)    => true
+puts is_odd?(-17)  => true
+puts is_odd?(-8)   => false
+puts is_odd?(0)    => false
+puts is_odd?(7)    => true
+
+DATA STRUCTURE
+- use number data structure
+
+ALGORITHM
+- pass in integer to method
+- divide integer by 2 and check reminder with '%' operator
+- if remainder == 1 then true, else false
+
+- #3 -
+UNDERSTAND PROBLEM
+Notes:
+
+Questions:
+
+EXAMPLES / TEST CASES
+
+Questions:
+
+DATA STRUCTURE
+
+ALGORITHM
+
+ABSTRACTION
+
+UNDERSTAND PROBLEM
+Notes:
+
+Questions:
+
+EXAMPLES / TEST CASES
+
+Questions:
+
+DATA STRUCTURE
+
+ALGORITHM
+
+ABSTRACTION
+
+UNDERSTAND PROBLEM
+Notes:
+
+Questions:
+
+EXAMPLES / TEST CASES
+
+Questions:
+
+DATA STRUCTURE
+
+ALGORITHM
+
+ABSTRACTION
+
+UNDERSTAND PROBLEM
+Notes:
+
+Questions:
+
+EXAMPLES / TEST CASES
+
+Questions:
+
+DATA STRUCTURE
+
+ALGORITHM
+
+ABSTRACTION
+
+UNDERSTAND PROBLEM
+Notes:
+
+Questions:
+
+EXAMPLES / TEST CASES
+
+Questions:
+
+DATA STRUCTURE
+
+ALGORITHM
+
+ABSTRACTION
