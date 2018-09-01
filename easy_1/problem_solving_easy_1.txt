@@ -19,7 +19,6 @@ repeat('Goodbye Bob', 2)  => 'Goodbye Bob'
 repeat('Nothing', 0)      => ''
 
 
-
 - #2 Odd-
 UNDERSTAND PROBLEM
 Notes:
@@ -47,7 +46,8 @@ ALGORITHM
 - divide integer by 2 and check reminder with '%' operator
 - if remainder == 1 then true, else false
 
-- #3 -
+
+- #3 List Of Digits -
 UNDERSTAND PROBLEM
 Notes:
 - create a method that takes
@@ -71,62 +71,222 @@ ALGORITHM
 - split resulting string into an array
 - collect all values in the array and convert into integers
 
+
+- #4 How Many -
 UNDERSTAND PROBLEM
 Notes:
-
-Questions:
+- write a method that counts the number of times each element occurs in a given array
+- input
+  - 1 array of various vehicles
+- output
+  - display each kind of vehicle along with how many times it occurs in the array
+  - note that you need to display the output only after counting all the occurrences
 
 EXAMPLES / TEST CASES
-
-Questions:
+count_occurrences(['car', 'car', 'truck', 'truck']        
+=> car        >> 2
+=> truck      >> 2
+count_occurrences(['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcycle', 'car', 'truck']
+=> car        >> 4
+=> truck      >> 3
+=> SUV        >> 1
+=> motorcycle >> 2
 
 DATA STRUCTURE
+- use array to store the vehicle types
+- possibly use a hash to store each unique vehicle type as a key and how many times it occurs as the value 
 
 ALGORITHM
+- first find each unique vehicle in the given array and store in a hash
+- then iterate over the hash and count each occurrence of each vehicle from the original array and store that value in the hashes values
+- display the hash with it's keys and values 
 
-ABSTRACTION
 
+- #5 Reverse It (Part 1) - 
 UNDERSTAND PROBLEM
 Notes:
-
-Questions:
+- write a method that takes one string and returns the words in reverse order
+- input
+  - one string
+- output
+  - the same string with words in reverse order
 
 EXAMPLES / TEST CASES
-
-Questions:
+reverse_sentence('')                     =>  ''
+reverse_sentence('Hello World')          => 'World Hello'
+reverse_sentence('Reverse these words')  => 'words these Reverse'
 
 DATA STRUCTURE
+- use strings to store the sentence
+- use and array to manipulate the words in the string
 
 ALGORITHM
+- convert the string to an array with each index represented by a word in the string
+- reverse the elements in the array
+- convert the array back to a string and return it 
 
-ABSTRACTION
 
+- # 6 Reverse It (Part 2) -
 UNDERSTAND PROBLEM
 Notes:
-
-Questions:
+- write a method that takes a string with one or more words and does the following
+  - returns the string where each word that has 5 or more letters is reversed
+- each string will have only letters and spaces		
+- only include spaces if more than one word is present
 
 EXAMPLES / TEST CASES
-
-Questions:
+reverse_words('Professional')
+=> 'lanoisseforP'
+reverse_words('Walk around the block')
+=> 'Walk dnuora the kcolb'
+reverse_words('Launch School')
+=> 'hcnuaL loophcS'
+reverse_words('four')
+=> 'four' 
 
 DATA STRUCTURE
+- use string to store sentence data
+- use array to manipulate data
 
 ALGORITHM
+- pass string to method
+- convert string into an array of words
+- iterate through the array and reverse each word that has 5 or more letters
+- convert back to a string and return result
 
-ABSTRACTION
 
+- #7 Stringy Strings -
 UNDERSTAND PROBLEM
 Notes:
+- write a method that takes one integer and returns a string of alternating '1' and '0' the length of the integer
+- the return string should start with 1
+- input
+  - 1 integer
+- output 
+  - 1 string of alternating 1's and 0's the length of the input
 
-Questions:
 
 EXAMPLES / TEST CASES
+stringy(6)     => 101010
+stringy(9)     => 101010101
+stringy(4)     => 1010
+stringy(7)     => 1010101
 
-Questions:
 
 DATA STRUCTURE
+- use number to hold the input
+- use string to create the output 
+
 
 ALGORITHM
+- receive integer into the method
+- loop for as many times as the size of the integer
+- if the counter is odd add a '1' to the string
+- else add 0 to the string
+- return complete string
 
-ABSTRACTION
+
+- #8 Array Averages -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that receives an array of integers and returns the average of those integers
+- input
+  - 1 array of integers 
+  - integers will always be positive
+  - array will never be empty
+- output
+  - average of array integers
+
+
+EXAMPLES / TEST CASES
+average([1, 5, 87, 45, 8, 8])     => 25
+average([9, 47, 23, 95, 16, 52])  => 40
+
+
+DATA STRUCTURES
+- Use array to store the integer input
+- use number to compute the results 
+
+
+ALGORITHM
+- receive 1 array of integers
+- create a variable to store the sum of integers
+- iterate through the array adding each integer to the total
+- compute the average and return it
+
+
+- #9 Sum Of Digits -
+UNDERSTAND PROBLEM
+Notes:
+- create a method that take one positive integer and returns the sum of its digits
+- input
+  - 1 positive integer
+- output
+  - sum of the integers digits
+- do without using basic loops: while, until, loop, each
+- result should print 'true'
+
+
+EXAMPLES/ TEST CASES
+puts sum(23) == 5             => true
+puts sum(496) == 19           => true
+puts sum(123_456_789) == 45   => true
+
+
+DATA STRUCTURES
+- use number to store the input integer
+- use array to store each number number in the integer
+
+
+ALGORITHM
+- receive the integer
+- convert the integer into a string and split the string into an array
+- collect the array strings and convert them into integers
+- add the integers in the array together
+- return the total 
+
+
+- #10 What My Bonus - 
+UNDERSTAND PROBLEM
+Notes:
+- create a method that takes two arguments, an integer and a boolean and do:
+  - check the boolean if true or false
+  - if true return half the integer
+  - if false return 0
+- input
+  - 1 integer
+  - 1 boolean
+- output
+  - either half the integer or 0
+  - results should print true given the examples below
+
+
+EXAMPLES / TEST CASES
+puts calculate_bonus(2800, true) == 1400    => true
+puts calculate_bonus(1000, false) == 0      => true
+puts calculate_bonus(50000, true) == 25000  => true
+
+
+DATA STRUCTURES
+- boolean to store true or false
+- number to store input and output
+
+
+ALGORITHM
+- receive integer and boolean into method
+- check boolean for true or false
+- if true 
+  - divide integer in half and return total
+- if false
+  - return 0
+
+
+
+
+
+
+
+
+
+
+
