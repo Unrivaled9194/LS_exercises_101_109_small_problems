@@ -1,0 +1,285 @@
+- #1 How Old Is Teddy? -
+UNDERSTAND PROBLEM
+Notes:
+- create a program that randomly generates "Teddy's" age
+- print the age out
+- age should be between 20 and 200
+
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - no user input
+- output
+  - printout of "Teddy's" age
+
+Test Cases:
+person_age()   => 'Teddy is 69 years old!
+person_age()   => 'Teddy is 20 years old!
+person_age()   => 'Teddy is 200 years old!
+
+
+DATA STRUCTURE
+- use number in order to generate a random number and store it
+
+ALGORITHM
+- generate a random number
+- store it in a variable
+- print the output
+
+
+- #2 How Big Is The Room? -
+UNDERSTAND PROBLEM
+Notes:
+- write a program that does the following:
+  - ask the user for the length and width of a room in meters
+  - displays the area of the room in meters
+  - displays the area of the room in feet
+- 1 square meter == 10.7639
+- no need to validate input
+
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - length and width in meters
+- output
+  - area in meters
+  - area in feet
+
+Test Cases:
+room_area(10, 7)    => 70 meters
+                    => 753.47 feet
+
+DATA STRUCTURE
+- use number to store parameters and calculate area
+
+
+ALGORITHM
+- Ask user for width and length
+- calculate area by length * width
+- convert meter area to feet 
+- display both area values
+
+
+- #3 Tip Calculator -
+UNDERSTAND PROBLEM
+Notes:
+- create a program that calculates a tip and total bill
+- it will ask the user for the bill amount and the tip percentage
+- display how much the tip is 
+- display the total bill including the tip
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+   - total bill amount
+   - tip percentage
+- output
+  - how much the tip is in dollars
+  - the total bill (bill + tip) in dollars
+
+Test Cases:
+bill == 200, tip == 15        =>  tip   == $30
+                              =>  total == $230
+
+DATA STRUCTURE
+- use number to store the bill information and calculate output
+
+ALGORITHM
+- ask user for the bill in dollars
+- ask the user for tip in percentage
+- calculate tip in dollars
+  - bill * (tip percentage / 100)
+- calculate bill total
+  - bill + tip in dollars
+- display output to user
+
+- #4 When Will I Retire? -
+UNDERSTAND PROBLEM
+Notes:
+- write a program that does the following: 
+  - asks the user their age
+  - asks what age they want to retire
+  - calculates the year they will retire and how many more years till then
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - user age
+  - age user will retire
+- output 
+  - the year user will retire
+  - how many more years until they will retire
+ 
+Test Cases:
+age ==        30          =>  retire_year == 2058
+retire_age == 70          =>  years_left  == 40 
+
+DATA STRUCTURE
+- use number to store the data and calculate years and age
+
+ALGORITHM
+- ask user for current age
+- ask user for retirement age
+- calculate years of work left
+  - retirement age - current age
+- calculate retirement year
+  - current year + years of work left
+- display output
+
+
+- #5 Greeting A User -
+UNDERSTAND PROBLEM
+Notes:
+- write a program that does the following:
+  - asks the user their name
+  - outputs either:
+    - greets the user by name
+    - yells back at user if name provided ended with '!' 
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input 
+  - users name
+- output one of
+  - greet user || yell at user
+
+Test Cases:
+users_name == Bob      => "Hello Bob"
+users_name == Bob!     => "HELLO BOB. WHAY ARE WE YELLING??"
+
+DATA STRUCTURE
+- use string to hold the users name and check chars
+
+ALGORITHM
+- ask for user's name and store it
+- check last character of name for '!'
+  - if != '!'
+    - Greet user normally
+  - else
+    - Yell back at user
+
+- #6 Odd Numbers -
+UNDERSTAND PROBLEM
+Notes:
+- write a program the prints all odd numbers between 1 and 99
+- include 99
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - 
+- output
+  - odd numbers from 1..99
+Test Cases:
+=> 1
+=> 3
+=> .
+=> .
+-> 99
+
+DATA STRUCTURE
+- use number to store and print the numbers
+
+ALGORITHM
+- create a counter variable
+- loop until the counter > 99
+- print the counter if its remainder when divided by 2 == 1
+- increment counter
+
+
+- #7 Even Numbers -
+UNDERSTAND PROBLEM
+Notes:
+- write a program that prints all the even numbers between 1 and 99
+- include up to 99
+
+EXAMPLES / TEST CASES
+Input / Output:
+- output
+  - even numbers between 1..99
+
+Test Cases:
+=> 2
+=> 4
+=> .
+=> .
+-> 98
+
+DATA STRUCTURE
+- use number to store and display integers
+
+ALGORITHM
+- loop through integers 1..99
+- check if integer each is even
+- if even, print the integer
+
+- #8 -
+UNDERSTAND PROBLEM
+Notes:
+- create a program that does the following:
+  - ask the user to enter an integer > 0
+  - ask whether user wants to calculate the sum or product of all integers between 1
+    and the entered integer
+- print the result of the calculation 
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input 
+  - 1 integer > 0
+  - choice of either "sum" or "product"
+- output 
+  - either:
+    - sum of all integers between 1 and chosen integer
+    - product of all integers between 1 and chosen integer
+
+Test Cases:
+sum(5)     => 15
+product(6) => 720
+
+DATA STRUCTURE
+- use number to store integer and calculate sum and product
+
+ALGORITHM
+- ask user for integer > 0
+- ask user for 'sum' or for 'product'
+- if sum
+  - send integer to sum method and calculate sum of of all numbers from 1 to integer
+  - display total
+- if product
+  - send integer to product method and calculate product of all number from 1 to integer
+  - display total
+
+- #9 -
+UNDERSTAND PROBLEM
+Notes:
+
+
+EXAMPLES / TEST CASES
+Input / Output:
+
+Test Cases:
+
+
+DATA STRUCTURE
+
+
+ALGORITHM
+
+
+- # -
+UNDERSTAND PROBLEM
+Notes:
+
+
+EXAMPLES / TEST CASES
+Input / Output:
+
+Test Cases:
+
+
+DATA STRUCTURE
+
+
+ALGORITHM
