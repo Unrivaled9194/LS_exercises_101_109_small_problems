@@ -1,0 +1,12 @@
+# 5_squaring_an_argument.rb
+
+def multiply(num1, num2)
+  num1 * num2
+end
+
+def square(num)
+  multiply(num, num)
+end
+
+puts square(5)
+puts square(-8)

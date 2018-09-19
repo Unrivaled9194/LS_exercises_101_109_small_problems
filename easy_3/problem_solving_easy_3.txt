@@ -1,0 +1,354 @@
+- #1 SEARCHING 101 -
+UNDERSTAND PROBLEM
+Notes:
+- Create a program that asks a user for a number 6 times 
+- Check if the 6th number exists in the 5 previous numbers
+- Print a message to the user if it does or doesn't
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - 6 numbers from user
+- output
+  - whether the 6th number is contained in the previous 5 or not
+
+Test Cases:
+[25, 15, 20, 17, 23, 17]            => "17 appears in the 25, 15, 20, 17, 23"
+[25, 15, 20, 17, 23, 99]            => "99 does not appear in 25, 15, 20, 17, 23"
+
+DATA STRUCTURE
+- Use Integer to receive user input
+- Use Array for storing collection of integers and searching 
+
+ALGORITHM
+- loop 6 times:
+  - Ask user for number and store input in array
+- Check array to see if last value occurs in the previous 5 
+- Output to user if the 6th number occurs in the first 5 or if it doesn't
+
+
+- #2 Arithmetic Integer-
+UNDERSTAND PROBLEM
+Notes:
+- Write a program that asks a user for two integers
+- Then output these operations on the two numbers:
+  - addition
+  - subtraction
+  - product
+  - quotient
+  - remainder
+  - power
+- No need to validate input
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - 2 integers
+- output
+  - 2 integers added
+  - 2 integers subtracted
+  - 2 integers multiplied
+  - 2 integers divided
+  - 2 integers remainder from division
+  - 2 integers to the power
+
+Test Cases:
+num1 = 23, num2 = 17      => 23 + 17 = 40
+                          => 23 - 17 = 6
+		          => 23 * 17 = 391
+                          => 23 / 17 = 1
+                          => 23 % 17 = 6
+                          => 23 ** 17 = 141050039560662968926103
+	
+DATA STRUCTURE
+Use Array to store and perform operations on the 2 numbers 
+
+ALGORITHM
+- Ask user for first and second number and store in array
+- perform operations on the two integers and output result
+
+
+- #3 Counting the Number of Characters -
+UNDERSTAND PROBLEM
+Notes:
+- Write a program that obtains a string from the user of any length and then prints out
+the number of characters in that string
+- Do not count spaces as a character
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - A string from the user
+- output 
+  - the number of characters in the string 
+  - don't include spaces in the count
+
+Test Cases:
+"walk"             => 4
+walk, don't run    => 13
+
+DATA STRUCTURE
+- Use String to store user input
+
+ALGORITHM
+- Acquire user input string
+- remove all spaces from the string
+- count the number of characters in the resulting string
+
+
+- #4 Multiplying Two Numbers -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the following
+  - takes two arguments
+  - multiplies the two arguments together
+  - returns the result
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input 
+  - two numbers
+- output
+  - the product of the input
+
+Test Cases:
+multiply(5,3)         => 15
+
+DATA STRUCTURE
+- Use Numbers for storing the input and multiplying
+
+ALGORITHM
+- Send two arguments to method
+- multiply them together
+- return the result 
+
+
+- #5 -
+UNDERSTAND PROBLEM
+Notes:
+- Using the method from problem #4
+  - write another method that uses the multiply method to determine the square of the input
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input 
+  - one number
+- output
+  - the square of the input
+
+Test Cases:
+square(5)             => 25
+square(-8)            => 64
+
+DATA STRUCTURE
+- Number
+
+ALGORITHM
+- Pass the input number to the square method as an argument
+- the square method will take the argument and pass it as the two argument for the multiply method
+
+
+- #6 Exclusive Or -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method named 'xor' that does the following
+  - takes two arguments
+  - returns TRUE if if exactly one of the arguments is truthy
+  - returns FLASE otherwise
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - two arguments 
+- output
+  - xor method returns either true or false
+
+Test Cases:
+xor?(5.even?, 4.even?)         => true
+xor?(5.odd?, 4.odd?)           => true      
+xor?(5.odd?, 4.even?)	       => false
+xor?(5.even?, 4.odd?)          => false
+
+DATA STRUCTURE
+- Use Boolean 
+
+ALGORITHM
+- Pass in two arguments to the 'xor' method
+- IF both are truthy
+  - return FALSE
+- ELSIF both are falsey 
+  - return FALSE
+- ELSE
+  - return TRUE
+
+- #7 Odd Lists -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the following
+  - receives an array as an argument
+  - returns an array with every other element from the passed in Array
+  - The returned elements should start at the 0 index
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - an array
+- return
+  - an array with every other element from the input array
+
+Test Cases:
+oddities([2, 3, 4, 5, 6])           => [2, 4, 6]
+oddities(['abc', 'def'])            => ['abc']
+oddities([])                        => [] 
+
+DATA STRUCTURE
+- Use Array to store information 
+
+ALGORITHM
+- Pass in starting array to the method
+- iterate over the array and return an array with every other element 
+
+
+- #8 Palindromic Strings (Part 1) -
+UNDERSTAND PROBLEM
+Notes:
+- Create a method that returns true if a string is palindromic and false otherwise
+- Palindromic is when a word or phrase can be spelled the same forward or backwards
+- The method is case sensitive 
+- All characters including punctuation are considered 
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input 
+  - a string
+- output
+  - true or false
+
+Test Cases:
+palindrome?('madam')               => true
+palindrome?('Madam')               => false   # case matters 
+palindrome?("madam i'm adam")      => false   # all characters considered
+palindrome?('356653')              => true
+
+DATA STRUCTURE
+- Use String to store the word or phrase
+
+ALGORITHM
+- Pass the string into the method as an argument
+- check true or false if original string equals the string reversed 
+- return TRUE or return FALSE
+
+- #9 Palindromic Strings (Part 2) -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the same palindrome checking as question 8 but this time:
+  - Method should be case-insensitive
+  - Method should ignore all non-alphanumeric characters
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input 
+  - a string
+- output
+  - true or false
+
+Test Cases:
+real_palindrome?('madam')               => true
+real_palindrome?('Madam')               => true    # case does not matter
+real_palindrome?("Madam, I'm Adam")     => true    # only alphanumerics matter
+real_palindrome?('356653')              => true
+real_palindrome?('356a653')             => true
+real_palindrome?('123ab321')            => false
+
+DATA STRUCTURE
+- Use String to hold input word or phrase
+- Possibly use Array to check for alphanumeric characters
+
+ALGORITHM
+- Pass string into method as argument
+- downcase the string
+- remove all non-alphanumeric characters from string
+- check if string reversed == simplified string
+  - If yes, return TRUE
+  - If no,  Return FALSE
+ 
+
+- #10 Palindromic Numbers -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that check if integer argument is palindromic
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input 
+  - Integer
+- output
+  - TRUE or FALSE
+
+Test Cases:
+palindromic_number?(34543)           => true
+palindromic_number?(123210)          => false
+palindromic_number?(22)              => true
+palindromic_number?(5)               => true
+
+DATA STRUCTURE
+- Use Number to store integer 
+- Possibly use String to check if palindromic
+
+ALGORITHM
+- pass in integer into method
+- convert integer to string
+- check it string reversed == string
+  - Return TRUE if yes
+  - Return FALSE if no
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
