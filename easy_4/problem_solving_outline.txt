@@ -1,0 +1,263 @@
+- #1 Short Long Short -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the following:
+  - Takes two strings as arguments
+  - Determines the longest of the two
+  - Returns the result of concatenating the short string, then long string, then short mailing_campaign_leads
+    - short=>long=>short
+  - You can assume the strings are different lengths
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - Two string arguments
+- Output
+  - strings concatenated like this:
+    - short_string >> long_string >> short_string
+
+Test Cases:
+short_long_short('abc', 'defgh')   => "abcdefghabc"
+short_long_short('abcde', 'fgh')   => "fghabcdefgh"
+short_long_short('', 'xyz')        => "xyz"
+
+DATA STRUCTURE
+- Use String to store and manipulate strings
+
+ALGORITHM
+- Receive two strings as arguments into method
+- Compare the two and determine longer string
+- Concatenate them together
+  - short_string >> long_string >> short_string
+
+
+- #2 What Century is That? -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the following:
+  - Takes a year as an argument
+  - Returns what century it is as a string
+  - the string should end with 'st','nd','rd', or 'th'
+  depending on the number
+  - New centuries begin in years that end with 01
+    - i.e. 1901-2000 would be the 20th century
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - a year as an integer
+- output
+  - the century of the year as a string with proper ending(ie 'st')
+
+Test Cases:
+century(2000)   => '20th'
+century(2001)   => '21st'
+century(1965)   => '20th'
+century(256)    => '3rd'
+century(5)      => '1st'
+century(10103)  => '102nd'
+century(1052)   => '11th'
+century(1127)   => '12th'
+century(11201)  => '113th'
+
+DATA STRUCTURE
+- Use Number to store the input and calculate century
+- Use String to display output
+
+ALGORITHM
+- Receive year into method via argument
+- Divide year by 100
+  - If there is a remainder add 1 to whole number
+  - If no remainder use whole number for century
+- determine ordinal for century value
+  - IF century ends in 0 get 'th'
+  - ELSIF century ends in 1 get 'st' UNLESS century ends in 11
+  - ELSIF century ends in 2 get 'nd' UNLESS century ends in 12
+  - ELSIF century ends in 3 get 'rd' UNLESS century ends in 13
+  - ELSE get 'th'
+- convert century to a string and concatenate the determined ordinal
+
+- #3 Leap Years (Part 1) -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the following:
+  - takes any year > 0 as an argument
+  - returns TRUE if it is a leap year
+  - returns FALSE if it not a leap year
+- A leap year is determined if:
+  - It is evenly divisible by 4
+  - UNLESS it is also divisible by 100
+    - If it is divisible by 100 then it is only a leap year if
+    it is evenly divisible by 400
+- Assume that the input year is > 0
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - An integer > 0
+- Output
+  - TRUE or FALSE
+
+Test Cases:
+leap_year?(2016)      => true
+leap_year?(2015)      => false
+leap_year?(2100)      => false
+leap_year?(2400)      => true
+leap_year?(240000)    => true
+leap_year?(240001)    => false
+leap_year?(2000)      => true
+leap_year?(1900)      => false
+leap_year?(1752)      => true
+leap_year?(1700)      => false
+leap_year?(1)         => false
+leap_year?(100)       => false
+leap_year?(400)       => true
+
+DATA STRUCTURE
+- Use Number to store year and operate on year
+
+ALGORITHM
+- receive year into method as argument
+- return TRUE if evenly divisible by 400
+- return FALSE if evenly divisible by 100
+- return TRUE if evenly divisible by 4
+- Else return FALSE
+
+- #5 Multiples of 3 and 5 -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the following
+  - searches for all multiples of 3 and 5 between 1 and a given number
+  - Then computes the sum of those multiples
+- Example:
+  - if 20: result will be 98 (3+5+6+9+10+12+15+18+20)
+- Only use a multiple once even it is a multiple of 3 and 5
+  - i.e. 15
+- Assume the integer passed in is greater than 1
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - an integer
+- output
+  - sum of the multiples of 3 and 5 between 1 and the integer
+
+Test Cases:
+multisum(3)       => 3
+multisum(5)       => 8
+multisum(10)      => 33
+multisum(1000)    => 234168
+
+DATA STRUCTURE
+- Use Number to store input number
+- Use Array to store multiples
+
+ALGORITHM
+- Receive integer into the array
+- loop for number between 1 and integer
+- check each number if it is divisible by 3 or 5
+  - If yes put number into an array
+- add contents of array together and return
+
+- #6 Running Totals -
+UNDERSTAND PROBLEM
+Notes:
+- Write an array that does the following:
+  - Receives an array as an argument
+  - Returns an array with the same number of elements
+  - Each element of the returned array has a running total from the
+  original array
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - an array of numbers
+- output
+  - an array with the following:
+    - same number of elements as original Array
+    - Each element is a running total from original array
+
+Test Cases:
+running_total([2, 5, 13])           => [2, 7, 20]
+running_total([14, 11, 7, 15, 20])  => [14, 25, 32, 47, 67]
+running_total([3])                  => [3]
+running_total([])                   => []
+
+DATA STRUCTURE
+- Use Array to store elements
+
+ALGORITHM
+- Receive array into method
+- create an empty array
+- iterate over the array with the index
+  - Each iteration add a new element to the empty array
+    - The element will be the sum of the current element from the original array + the last element
+    entered in the new array
+- return the new array
+
+
+- #7 Convert a String to a Number! -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the following:
+  - receives a string of digits as an argument
+  - returns the appropriate number as an integer
+  - do not worry about + and - signs or invalid characters
+  - do not use any standard Ruby conversion methods such as #to_i, Integer() etc
+
+EXAMPLES / TEST CASES
+Input / Output:
+- input
+  - a string of numbers
+- Output
+  - the string as an integer
+
+Test Cases:
+string_to_integer('4321')   => 4321
+string_to_integer('570')    => 570
+
+DATA STRUCTURE
+- Use String to store the input
+- Use Numbers for output
+- Possible Array to hold the characters in the string and for iteration
+
+ALGORITHM
+- Receive the string of numbers into the method
+- split the characters in the string into an array
+- check each character against it's numeric counterpart and replace with the integer
+- combine the array of integers together and return
+
+
+- #9 Convert a Number to a String! -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that does the reverse of problem #7
+  - Converts a number to its string
+- Number will be positive or 0
+- As before conversion methods may not be used
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a positive integer
+- Output
+  - the string version of the integer
+
+Test Cases:
+integer_to_string(4321)     => '4321'
+integer_to_string(0)        => '0'
+integer_to_string(5000)     => '5000'
+
+DATA STRUCTURE
+- Use Number to store integer
+- Use String to return value
+- Possibly use Array to store characters
+
+ALGORITHM
+- Create a hash constant that contains number 0 - 9 as keys and their string
+equivalents as values
+- Receive integer into method
+- create array from digits in the integer
+- map over the array converting each element into its string equivalent
+using the hash as a dictionary
+- join the returned array and return out of the method
