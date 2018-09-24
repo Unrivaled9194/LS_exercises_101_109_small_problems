@@ -1,0 +1,347 @@
+- #1 ASCII String Value -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - Receives a string as an argument
+  - adds up the ASCII values of all the characters and returns the result
+  - Use #ord to determine the value of each character
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - A string
+- Output
+  - Sum of the ASCII values of each character in the string
+
+Test Cases:
+ascii_value('Four score')       => 984
+ascii_value('Launch School')    => 1251
+ascii_value('a')                => 97
+ascii_value('')                 => 0
+
+DATA STRUCTURE
+- Use String to store the input and calculate ASCII values
+- Use Number for return value
+
+ALGORITHM
+- Receive string into the method
+- iterate of each character in the string
+  - Determine each characters ASCII value with #ord
+  - Add each value to a running total
+- Return the total ASCII value
+
+
+- #2 After Midnight (Part 1) -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - takes an positive or negative integer
+  - the integer represents time in minutes
+    - a positive integer counts minutes after midnight
+    - a negative integer counts minutes before midnight
+  - return the time represented in a 24 hour format (hh:mm)
+- There are 1440 minutes in a day
+- Do not use Ruby's Date and Time classes
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - positive or negative integer representing minutes
+- Output
+  - A string representing those minutes in 24 hours time
+
+Test Cases:
+time_of_day(0)        => "00:00"
+time_of_day(-3)       => "23:57"
+time_of_day(35)       => "00:35"
+time_of_day(-1437)    => "00:03"
+time_of_day(3000)     => "02:00"
+time_of_day(800)      => "13:20"
+time_of_day(-4231)    => "01:29"
+
+DATA STRUCTURE
+- Use Number to store integer of minutes and for calculations
+- Use String to return formatted time
+
+ALGORITHM
+- Receive integer into method
+- IF absolute value of integer is > 1440
+  - THEN simplify time by integer % 1440
+- IF integer is positive
+  - Divide by 60 and put result into an "hours" variable
+  - Modulo by 60 and put result into an "minutes" variable
+- IF integer is negative
+  - Subtract absolute value of integer from 1440 (1440 - absolute.integer)
+  - Divide by 60 and put result into an "hours" variable
+  - Modulo by 60 and put result into an "minutes" variable
+- Return formatted and concatenated "hours" + ":" + "minutes"
+
+
+- #3 After Midnight (Part 2) -
+UNDERSTAND PROBLEM
+Notes:
+- Write two methods
+  - Each take a string that represents time in a 24 hour format
+  - 1st method
+    - returns minutes AFTER midnight
+  - 2nd method
+    - returns minutes BEFORE midnight
+  - Both return a value in the 0..1439 range
+- Do not use Ruby's Date and Time methods
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - Time in a 24 hour string format ("hh:mm")
+- Output
+  - An integer representing minutes between 0..1439
+
+Test Cases:
+after_midnight('00:00')     => 0
+before_midnight('00:00')    => 0
+after_midnight('12:34')     => 754
+before_midnight('12:34')    => 686
+after_midnight('24:00')     => 0
+before_midnight('24:00')    => 0
+
+DATA STRUCTURE
+- Use String to store input time
+- Use Number to calculate minutes and return value
+
+ALGORITHM
+- Receive time as string into methods
+- For after_midnight method
+  - split the string by ':' and convert the two string to integers
+  - multiply the first integer by 60 and add to the second to
+  get total minutes
+  -return total minutes after midnight
+- For before_midnight method
+  - do same calculations as the first method
+  - Then minus total from 1440
+  - return result
+
+- #4 Letter Swap -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - receives a string of words
+  - swaps the first and last letter of each word and returns the result
+- Assume that:
+  - every word has at least one letter
+  - each string will contain at least one word
+  - each string will contain only words and spaces
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - A string of words
+- Output
+  - The string with the first and last letters of each word swapped
+
+Test Cases:
+swap('Oh what a wonderful day it is')   => 'hO thaw a londerfuw yad ti si'
+swap('Abcde')                           => 'ebcdA'
+swap('a')                               => 'a'
+
+DATA STRUCTURE
+- Use String for storing words and manipulation
+- Possible Array for manipulation as well
+
+ALGORITHM
+- Receive string into method
+- Use #split to create an array of the words
+- Iterate through the array
+  - store the first and last character of the current word in variables using #slice
+  - put the characters back into the word but swapped
+- Join the array into a string and return
+
+
+- #5 Clean up the Words -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - Receives a string of various characters both alphabetic and non-alphabetic
+  - Replace all non-alphabetic characters with spaces
+  - Remove any consecutive spaces(never have two spaces in a row)
+  - Return the result
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - A string of various characters
+- Output
+  - The string with a non-alphabetic characters and consecutive spaces removed
+
+Test Cases:
+cleanup("---what's my +*& line?")       => ' what s my line '
+
+DATA STRUCTURE
+- Use string to store characters and manipulation
+
+ALGORITHM
+- Create variable constant of all alphabetic characters
+- Receive string into method
+- Iterate over each character
+  - If character is alphabetic concatenate into new string
+  - If not alphabetic concatenate space into new string
+- Use #squeeze method to leave only single spaces
+- Return resulting string
+
+
+- #6 Letter Counter (Part 1) -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - receives a string of space separated words
+  - returns a hash that shows the number of words of different sizes
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - String of space separated words
+- Output
+  - A hash that shows the number of words of each size
+
+Test Cases:
+word_sizes('Four score and seven.')                       => { 3 => 1, 4 => 1, 5 => 1, 6 => 1 }
+word_sizes('Hey diddle diddle, the cat and the fiddle!')  => { 3 => 5, 6 => 1, 7 => 2 }
+word_sizes("What's up doc?")                              => { 6 => 1, 2 => 1, 4 => 1 }
+word_sizes('')                                            => {}
+
+DATA STRUCTURE
+- Use string for input
+- Array to separate each word
+- Use hash for output and manipulation
+
+ALGORITHM
+- Receive string into method as argument
+- #split the string into an array
+- iterate over the array
+  - IF current word size doesn't exist in hash create it's key and add 1 to its value
+  - IF current word size does exist in hash increase it's value by 1
+- Return resulting hash
+
+
+- #8 Alphabetical Numbers -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - Receives an array of integers between 0..19
+  - Returns an array of the integers sorted
+  alphabetically based on their English word equivalent
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - An array of integers from 0..19
+- Output
+  - The array of integers sorted alphabetically based on their english words
+
+Test Cases:
+alphabetic_number_sort((0..19).to_a) => [
+  8, 18, 11, 15, 5, 4, 14, 9, 19, 1, 7, 17,
+  6, 16, 10, 13, 3, 12, 2, 0
+]
+
+DATA STRUCTURE
+- Use Array to store the integers
+- Use a hash to create a collection of the integers and their word equivalents
+
+ALGORITHM
+- Create a hash constant with the english numbers as keys and integers as values
+- Receive the integer array into the method
+- iterate through the array and check it against hash values, if the
+current integer is in the hash values then add the hash key and pair to a new hash
+- convert new hash into an array and sort
+- return sorted array.
+
+- # -
+UNDERSTAND PROBLEM
+Notes:
+
+EXAMPLES / TEST CASES
+Input / Output:
+
+Test Cases:
+
+DATA STRUCTURE
+
+ALGORITHM
+
+
+- #9 ddaaiillyy ddoouubbllee -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - receives a string
+  - collapses all consecutive duplicate characters into one character
+  - returns the resulting string
+- Don't use #squeeze or #squeeze!
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - A string
+- Output
+  - A string with consecutive duplicate characters simplified into 1 character
+
+Test Cases:
+crunch('ddaaiillyy ddoouubbllee') == 'daily double'
+crunch('4444abcabccba') == '4abcabcba'
+crunch('ggggggggggggggg') == 'g'
+crunch('a') == 'a'
+crunch('') == ''
+
+DATA STRUCTURE
+- Use String to store text and return modified string
+- Possibly use Array to iterate and modify characters
+
+ALGORITHM
+- Receive string into method
+- iterate over each character
+  - delete the next character in the index if it is == to the current character
+- return resulting string
+
+- #10 Bannerizer -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - Receives a short line of text
+  - Prints the text within a box
+- Assume that the input will always fit in the
+terminal windows
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - A short string
+- Output
+  - The input string printed within a box
+
+Test Cases:
+print_in_box('To boldly go where no one has gone before.')
++--------------------------------------------+
+|                                            |
+| To boldly go where no one has gone before. |
+|                                            |
++--------------------------------------------+
+
+print_in_box('')
++--+
+|  |
+|  |
+|  |
++--+
+
+DATA STRUCTURE
+- Use String for text storing, formatting and output
+
+ALGORITHM
+1. Receive string into method
+2. Print a collection of dashes 2 more than the length of string
+3. Print two pipe characters
+  - One at beginning of line and one two further than string length
+  - Whitespace between the two
+4. print the string with a pipe character leading and trailing
+5. Do step 3 again
+6. Do step 2 again  
