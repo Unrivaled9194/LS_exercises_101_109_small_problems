@@ -1,0 +1,388 @@
+- #1 Cute Angles -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - receives a float that represents an angle between 0-360 degrees
+  - returns a string that represents that angle in:
+    - degrees, numbers, and seconds
+- a degree has 60 minutes
+- a minute has 60 seconds
+- format with leading zeros when displaying minutes and seconds
+  - 321°03'07"
+- Use this constant for the degree symbol
+  - DEGREE = "\xC2\xB0"
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a float between 0 - 360
+- Output
+  - the float represented as a string with:
+    - degrees, minutes, seconds
+
+Test Cases:
+dms(30)           => %(30°00'00")
+dms(76.73)        => %(76°43'48")
+dms(254.6)        => %(254°36'00")
+dms(93.034773)    => %(93°02'05")
+dms(0)            => %(0°00'00")
+dms(360)          => %(360°00'00") || dms(360) == %(0°00'00")
+
+DATA STRUCTURE
+- Use Number for storing input and calculations
+- Use String for output and formatting
+
+ALGORITHM
+- Receive float into method
+- calculate degrees by converting to an integer
+- calculate minutes by:
+  - take modulo of float and degree
+  - multiply that by 60 and convert to integer
+- calculate seconds by
+  - take modulo of unconverted minutes and integer minutes
+  - multiply by 60 and convert to integer
+- Place all three values in a string with proper formatting
+- return string
+
+
+- #2 Delete Vowels -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - receives an array of strings
+  - returns the same array but with the vowels removed
+- vowels are: a, e, i, o, u
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - array of strings
+- Output
+  - same array of string with vowels removed
+
+Test Cases:
+remove_vowels(%w(abcdefghijklmnopqrstuvwxyz)) => %w(bcdfghjklmnpqrstvwxyz)
+remove_vowels(%w(green YELLOW black white))   => %w(grn YLLW blck wht)
+remove_vowels(%w(ABC AEIOU XYZ))              => ['BC', '', 'XYZ']
+
+DATA STRUCTURE
+- Use Array for data manipulation
+- Use String for storing array elements
+
+ALGORITHM
+- receive array into method
+- iterate over the array and delete the vowels in each element
+- return the new array
+
+
+- #3 Fibonacci Number Location By Length -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - takes an integer greater than or equal to 2 as an argument
+  - Using a Fibonacci series of numbers
+    - determines at what index point in the series where the first
+    Fibonacci number has the number of digits in the argument
+- The Fibonacci series first two numbers are 1
+  - each following number is the sum of the previous two numbers
+- The first Fibonacci number is index 1
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - an integer >= 2
+- Output
+  - an integer representing the index of the determined Fibonacci #
+
+Test Cases:
+find_fibonacci_index_by_length(2)     => 7          # 1 1 2 3 5 8 13
+find_fibonacci_index_by_length(3)     => 12         # 1 1 2 3 5 8 13 21 34 55 89 144
+find_fibonacci_index_by_length(10)    => 45
+find_fibonacci_index_by_length(100)   => 476
+find_fibonacci_index_by_length(1000)  => 4782
+find_fibonacci_index_by_length(10000) => 47847
+
+DATA STRUCTURE
+- Use Numbers for input and output and calculations
+- Use Array for storing the Fibonacci sequence
+
+ALGORITHM
+- receive the integer into the method
+- create an array with 1 as it's first two elements
+- loop
+  - add a new number to the sequence
+    - current index # = previous 2 index #'s added together
+  - if that newly added #'s length == input integer then BREAK loop
+- Return last index location in array + 1
+
+
+- #4 Reversed Arrays(Part 1) -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method that:
+  - receives an array
+  - reverses the elements in place, mutating the method
+  - return the same array object
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - an array
+- Output
+  - return the same array with elements reversed
+
+Test Cases:
+list = [1,2,3,4]
+result = reverse!(list) # => [4,3,2,1]
+list == [4, 3, 2, 1]
+list.object_id == result.object_id
+
+list = %w(a b c d e)
+reverse!(list) # => ["e", "d", "c", "b", "a"]
+list == ["e", "d", "c", "b", "a"]
+
+list = ['abc']
+reverse!(list) # => ["abc"]
+list == ["abc"]
+
+list = []
+reverse!(list) # => []
+list == []
+
+DATA STRUCTURE
+- Use Array for storing elements and manipulating element positions
+
+ALGORITHM
+- receive array into method
+- loop for the number of elements in the array
+  - use #shift to remove the first element
+  - place the return value at the end of the array
+- return the mutated and reversed array
+
+
+- #5 Reversed Arrays (Part 2) -
+UNDERSTAND PROBLEM
+Notes:
+- Write a method similar to PROBLEM #4 but that returns a new array.
+It doesn't mutate the original array.
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - an array
+- Output
+  - return a new array that is a copy of the original array but
+  with elements reversed
+
+Test Cases:
+reverse([1,2,3,4]) == [4,3,2,1]          # => true
+reverse(%w(a b c d e)) == %w(e d c b a)  # => true
+reverse(['abc']) == ['abc']              # => true
+reverse([]) == []                        # => true
+
+list = [1, 2, 3]                      # => [1, 2, 3]
+new_list = reverse(list)              # => [3, 2, 1]
+list.object_id != new_list.object_id  # => true
+list == [1, 2, 3]                     # => true
+new_list == [3, 2, 1]                 # => true
+
+
+DATA STRUCTURE
+- Use Array to store elements and manipulate arrays
+
+ALGORITHM
+- receive array into method
+- create new empty array
+- loop for the number of elements in first array
+  - use #pop to remove the last element and then place the
+  returned element at the end of the new array
+- return the new array
+
+
+- #6 Combining Arrays  -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - takes two arrays as arguments
+  - combines the two arrays into one
+  - removes any duplicate elements
+  - return the new array
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - two arrays
+- Output
+  - one array that contains the input arrays combined
+    - the array should only have unique values
+
+Test Cases:
+merge([1, 3, 5], [3, 6, 9]) == [1, 3, 5, 6, 9]
+
+DATA STRUCTURE
+- Use array to store and manipulate elements
+
+ALGORITHM
+- receive two arrays into method
+- combine them together with +
+- delete all duplicate value
+- return new array
+
+
+- #7 Halvsies -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives 1 array
+  - returns a nested array containing the first and
+  second half of the received array
+  - if the original array has an odd number of elements
+  then the middle element goes in the first array
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - one array
+- Output
+  - a nested array with
+    - the first array as the first half of the input array
+    - the second array as the second half of the input array
+
+Test Cases:
+halvsies([1, 2, 3, 4]) == [[1, 2], [3, 4]]
+halvsies([1, 5, 2, 4, 3]) == [[1, 5, 2], [4, 3]]
+halvsies([5]) == [[5], []]
+halvsies([]) == [[], []]
+
+DATA STRUCTURE
+- Use Array to store and manipulate arrays
+
+ALGORITHM
+- receive array into method
+- use #slice to cut array in half
+- take two halves and put into nest array
+- return the nested array
+
+- #8 Find The Duplicate -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives an unordered array of integers
+  - return the element that occurs twice
+- only one element will occur twice
+- every other element will occur once
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - an array of integers
+- Output
+  - the duplicate element
+
+Test Cases:
+find_dup([1, 5, 3, 1]) == 1
+find_dup([18,  9, 36, 96, 31, 19, 54, 75, 42, 15,
+          38, 25, 97, 92, 46, 69, 91, 59, 53, 27,
+          14, 61, 90, 81,  8, 63, 95, 99, 30, 65,
+          78, 76, 48, 16, 93, 77, 52, 49, 37, 29,
+          89, 10, 84,  1, 47, 68, 12, 33, 86, 60,
+          41, 44, 83, 35, 94, 73, 98,  3, 64, 82,
+          55, 79, 80, 21, 39, 72, 13, 50,  6, 70,
+          85, 87, 51, 17, 66, 20, 28, 26,  2, 22,
+          40, 23, 71, 62, 73, 32, 43, 24,  4, 56,
+          7,  34, 57, 74, 45, 11, 88, 67,  5, 58]) == 73
+
+DATA STRUCTURE
+- Use Array to store array and filter
+- Use Number to return the value
+
+ALGORITHM
+- Receive array into method
+- iterate over the array
+  - select the element that is not uniq
+- return the selected element
+
+
+- #9 Does My List Include This? -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that
+  - is name "include?"
+  - receives an Array and search value
+  - returns true if the value is in the array
+  - returns false if the value is not in the array
+- Do not use the #include? method
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - An array
+  - a search value
+- Output
+  - true or false
+
+Test Cases:
+include?([1,2,3,4,5], 3) == true
+include?([1,2,3,4,5], 6) == false
+include?([], 3) == false
+include?([nil], nil) == true
+include?([], nil) == false
+
+DATA STRUCTURE
+- Use Array for storing elements
+- use Number for value to search for
+
+ALGORITHM
+- Receive array and value into method
+- iterate through the array
+  - check with method #any? if the value exists
+- return true or false depending on outcome
+
+
+- #10 Right Triangles -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a positive integer (n)
+  - displays a triangle whose sides each have n stars
+  - the hypotenuse of the triangle should have one end
+  at the lower-left of the triangle, and the other at the
+  upper right
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a positive integer
+- Output
+  - printout of a triangle
+
+Test Cases:
+triangle(5)
+
+    *
+   **
+  ***
+ ****
+*****
+
+triangle(9)
+
+        *
+       **
+      ***
+     ****
+    *****
+   ******
+  *******
+ ********
+*********
+
+DATA STRUCTURE
+- Use Number to store input integer
+
+ALGORITHM
+- receive integer(n) into method
+- loop n times
+  - first line print * n spaces away
+  - second line print a * in n-1 line
+  - continue pattern till end of loop
