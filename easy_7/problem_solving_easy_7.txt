@@ -1,0 +1,335 @@
+- #1 Combine Two Lists -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives two arrays as arguments
+  - combines the elements in the arrays into one array
+    - elements should be taken in alteration from the two arrays
+  - return the combined array
+- assume
+  - both arrays are non-empty
+  - arrays have same number of elements
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - two arrays
+- Output
+  - return one combined array
+
+Test Cases:
+interleave([1, 2, 3], ['a', 'b', 'c']) == [1, 'a', 2, 'b', 3, 'c']
+
+DATA STRUCTURE
+- Use Array for arrays and for element manipulation
+
+ALGORITHM
+- receive arrays into method
+- create an empty array
+- create a index counter
+- iterate for the number of elements in one of the arrays
+  - first add element from index in list 1 into new array
+  - then add element from index in list 2 into new array
+- return combined array
+
+
+- #2 Lettercase Counter -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - returns a hash with 3 entries that represent:
+    - # of characters in string that are lowercase letters
+    - # of characters in string that are uppercase letters
+    - # of characters that are neither
+  - return hash
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - a hash
+
+Test Cases:
+letter_case_count('abCdef 123') == { lowercase: 5, uppercase: 1, neither: 4 }
+letter_case_count('AbCd +Ef') == { lowercase: 3, uppercase: 3, neither: 2 }
+letter_case_count('123') == { lowercase: 0, uppercase: 0, neither: 3 }
+letter_case_count('') == { lowercase: 0, uppercase: 0, neither: 0 }
+
+DATA STRUCTURE
+- Use Array for string storage and iteration
+- Use Hash for character categorization
+
+ALGORITHM
+- receive array into method
+- create a hash with 'lowercase', 'uppercase', and 'neither' keys
+  - all values set to 0
+- iterate through string characters
+  - IF character is lowercase add 1 to hash 'lowercase' value
+  - IF character is uppercase add 1 to hash 'uppercase' value
+  - ELSE add 1 to 'neither' value
+return hash
+
+
+- #3 Capitalize Words -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string as an argument
+  - returns the string with every word capitalized
+- assume that all words contain non-blank characters
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - the same string with its words capitalized
+
+Test Cases:
+word_cap('four score and seven') == 'Four Score And Seven'
+word_cap('the javaScript language') == 'The Javascript Language'
+word_cap('this is a "quoted" word') == 'This Is A "quoted" Word'
+
+DATA STRUCTURE
+- use String to store input and output
+- use array to iterate over each word in string
+
+ALGORITHM
+- receive string into method
+- convert string into array with each element being a word from the string
+- iterate over the array
+  - capitalize each word with #capitalize
+- convert the array to a string and return
+
+
+- #4 Swap Case -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - returns a new string with:
+    - all lowercase letter chars replaced with uppercase
+    - all uppercase letter chars replaced with lowercase
+  - all other chars are unchanged
+- may not use #swapcase method
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - a string with it chars cases swapped
+
+Test Cases:
+swapcase('CamelCase') == 'cAMELcASE'
+swapcase('Tonight on XYZ-TV') == 'tONIGHT ON xyz-tv'
+
+DATA STRUCTURE
+- use string to store input and output
+- use Array to store and manipulate words and chars
+
+ALGORITHM
+- receive string into method
+- put words into an array
+- iterate through the array
+  - put each words chars into an array
+  - iterate through each words chars
+    - IF char upcased == char THEN downcase the char
+    - ELSE upcase the char
+  - join chars back into words
+- join words back into string and return
+
+
+- #5 Staggered Caps (Part 1) -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - returns a new string with
+    - every other char capitalized and the remaining chars lowercase
+  - non letter chars should not be changed but count as chars when switching
+  cases
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - a string with every other char capitalized
+
+Test Cases:
+staggered_case('I Love Launch School!') == 'I LoVe lAuNcH ScHoOl!'
+staggered_case('ALL_CAPS') == 'AlL_CaPs'
+staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 NuMbErS'
+
+DATA STRUCTURE
+- use String to store input and output
+- use Array to iterate and manipulate chars
+
+ALGORITHM
+- receive string into method
+- iterate over each char
+  - if char is located at even index then upcase it
+  - if char is located at odd index then downcase it
+- return resulting string
+
+
+- #6 Staggered Caps (Part 2) -
+UNDERSTAND PROBLEM
+Notes:
+- modify the previous problems method so:
+  - the method ignores non-alphabetic chars when determining upcase and downcase
+  - non-alphabetic chars should still be included in the return
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - a string with alternating uppercase and lowercase chars
+
+Test Cases:
+staggered_case('I Love Launch School!') == 'I lOvE lAuNcH sChOoL!'
+staggered_case('ALL CAPS') == 'AlL cApS'
+staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 nUmBeRs'
+
+DATA STRUCTURE
+- use string to store and return strings
+- use array to store and manipulate chars
+
+ALGORITHM
+- same as previous problem but only increment the index counter if current
+char is alphabetic
+
+- #7 Multiplicative Average -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives an array of integers
+  - multiplies all the integers together
+  - divides the product by the number of elements in the array
+  - prints out the result rounded to 3 decimal places
+- assume the array is non-empty
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - array of integers
+- Output
+  - print out of the calculation
+
+Test Cases:
+show_multiplicative_average([3, 5])
+The result is 7.500
+
+show_multiplicative_average([6])
+The result is 6.000
+
+show_multiplicative_average([2, 5, 7, 11, 13, 17])
+The result is 28361.667
+
+DATA STRUCTURE
+- Use array to store the integers
+- Use Number to perform calculations
+
+ALGORITHM
+- receive the array into method
+- multiplay each element together
+- divide the product by the number of elements in the array
+- result should be a float rounded to 3 decimal places
+- print the result
+
+
+- #8 Multiply Lists -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives two arrays as arguments
+  - returns an array whos elements are the products of the received arrays
+  identical index values multiplied together
+- assume the arrays have the same number of elements
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - two arrays
+- Output
+  - one array
+
+Test Cases:
+multiply_list([3, 5, 7], [9, 10, 11]) == [27, 50, 77]
+
+DATA STRUCTURE
+- use Array for element storage and calculation
+
+ALGORITHM
+- receive the two arrays into the method
+- create an empty arrays
+- loop for the size of one of the received arrays
+  - multiply the elements from the received arrays together at the current
+  index counter
+  - take the product and insert into the new array
+- return the resulting array
+
+
+- #9 Multiply All Pairs -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives two arrays as arguments
+  - returns an array that:
+    - contains the product of every possible pair of numbers from the
+    two arrays
+    - new array should be sorted smallest to largest products
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - two arrays
+- Output
+  - one array of products
+
+Test Cases:
+multiply_all_pairs([2, 4], [4, 3, 1, 2]) == [2, 4, 4, 6, 8, 8, 12, 16]
+
+DATA STRUCTURE
+- use Array to store and return values
+
+ALGORITHM
+- receive two arrays into method
+- iterate over the first array
+  - then iterate over the second array
+    - add a new element to a new array that is the product of the current
+    element from array1 and the current element of the iteration of array2
+- return the resulting array sorted smallest to largest
+
+
+- #10 The End Is Near But Not Here -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string of at least two words
+  - returns the second to last word in the string
+- words are any sequence of non-blank characters
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - a single word string
+
+Test Cases:
+penultimate('last word') == 'last'
+penultimate('Launch School is great!') == 'is'
+
+DATA STRUCTURE
+- use String to store input and words
+- use array for accessing each word
+
+ALGORITHM
+- receive string into the method
+- convert string into array of individual words
+- return the element at index -2
