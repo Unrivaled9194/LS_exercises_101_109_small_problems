@@ -1,0 +1,350 @@
+- #1 Sum of Sums -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives an array of numbers
+  - returns the sum of the sums of each leading subsequence
+- assume the array contains at least one number
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - an array of numbers
+- Output
+  - sum of sums of each leading subsequence in array
+
+Test Cases:
+sum_of_sums([3, 5, 2]) == (3) + (3 + 5) + (3 + 5 + 2) # -> (21)
+sum_of_sums([1, 5, 7, 3]) == (1) + (1 + 5) + (1 + 5 + 7) + (1 + 5 + 7 + 3) # -> (36)
+sum_of_sums([4]) == 4
+sum_of_sums([1, 2, 3, 4, 5]) == 35
+
+DATA STRUCTURE
+- Use Array for number storage
+- Use Number for math and sum return
+
+ALGORITHM
+- receive array into method
+- create a total variable set to 0
+- iterate for the size of the array
+  - starting with the first element on each iteration add the
+  next element to the sequence and get a sum and add it to the total
+  - increase the range of elements to be added together by 1
+- return the total sum
+
+
+- #2 Madlibs -
+UNDERSTAND PROBLEM
+Notes:
+- write a Mad lib program that:
+  - asks the user for a:
+    - noun
+    - verb
+    - adverb
+    - adjective
+  - then takes the given words and inserts them into a story
+  you have created
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - strings: a noun, verb, adverb, adjective
+- Output
+  - a string that is a story containing the input words
+
+Test Cases:
+Enter a noun: dog
+Enter a verb: walk
+Enter an adjective: blue
+Enter an adverb: quickly
+
+Do you walk your blue dog quickly? That's hilarious!
+
+DATA STRUCTURE
+- Use string for input words and for story output
+
+ALGORITHM
+- create a story method that:
+  - receives the words the user has input
+  - prints out a given story containing those words
+- prompt user for each type of word
+- send to created method
+
+- #3 Leading Substrings -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - return an array that contains
+    - all substrings that begin at the start of the input string
+    - the values should be ordered from shortest to longest
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - an array of substrings
+
+Test Cases:
+substrings_at_start('abc') == ['a', 'ab', 'abc']
+substrings_at_start('a') == ['a']
+substrings_at_start('xyzzy') == ['x', 'xy', 'xyz', 'xyzz', 'xyzzy']
+
+DATA STRUCTURE
+- Use String for input and array elements
+- Use array for return and for sorting
+
+ALGORITHM
+- receive a string into method
+- create empty array
+- iterate for the number of chars in input string
+  - each iteration add substring to array that starts at index 0
+  through the next index in the iteration
+
+
+- #4 All Substrings -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - returns a list of all substrings of a string
+  - order the list by where in the string the substring begins
+    - so all substrings that start at position 0 come first
+    - then all substrings that start at position 1 and so on
+    - the substrings at a given position should be sorted smallest to largest
+- use the method from problem #3
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - a array of all substrings
+
+Test Cases:
+substrings('abcde') == [
+  'a', 'ab', 'abc', 'abcd', 'abcde',
+  'b', 'bc', 'bcd', 'bcde',
+  'c', 'cd', 'cde',
+  'd', 'de',
+  'e'
+]
+
+DATA STRUCTURE
+- use String for input and each element in the array
+- use Array for iteration and sorting
+
+ALGORITHM
+- receive string into method
+- add another loop to the method from problem #3
+  - this will iterate for the number of chars in the string
+- modify the loop from problem #3 to add the substrings from index += 1
+- return array of substrings
+
+
+- #5 Palindromic Substrings -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - returns a list of all substrings that are palindromic(same forward as back)
+  - they should be returned in the same sequence as the substrings appear in
+  the string
+  - include duplicate palindromes
+- use the #substrings method from problem #4
+- Case should be considered in comparison
+- include special characters
+- don't include single characters
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - an array of all palindromes in the strings substrings
+
+Test Cases:
+palindromes('abcd') == []
+palindromes('madam') == ['madam', 'ada']
+palindromes('hello-madam-did-madam-goodbye') == [
+  'll', '-madam-', '-madam-did-madam-', 'madam', 'madam-did-madam', 'ada',
+  'adam-did-mada', 'dam-did-mad', 'am-did-ma', 'm-did-m', '-did-', 'did',
+  '-madam-', 'madam', 'ada', 'oo'
+]
+palindromes('knitting cassettes') == [
+  'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt'
+]
+
+DATA STRUCTURE
+- use String for input and for array elements
+
+ALGORITHM
+- receive string into array
+- send the string to the #substrings method and assign return to a variable
+- create an empty palindrome array
+- iterate through the substring array and check if each value is the same
+forward as in reverse
+  - IF a value is then put into the palindrome array
+- return palindrome array
+
+
+- #6 fizzbuzz -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - takes two arguments, a starting number and ending number
+  - prints out all numbers between the two numbers unless
+    - it is divisible by 3, then print 'Fizz'
+    - it is divisible by 5, then print 'Buzz'
+    - if is divisible by 3 and 5, print 'FizzBuzz'
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - two numbers
+- Output
+  - print numbers in between the input as well as special outputs
+
+Test Cases:
+fizzbuzz(1, 15) # -> 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz
+
+DATA STRUCTURE
+- use Number for input
+- possibly use array for storing range of nums
+- use String for output
+
+ALGORITHM
+- receive two numbers into method
+- iterate over the range of the two nums
+  - check current num
+    - IF divisible by 3 && 5 print 'FizzBuzz'
+    - ELSIF divisible by 3 print 'FIZZ'
+    - ELSIF divisible by 5 print 'Buzz'
+    - ELSE print current num
+
+
+- #7 Double Char (Part 1) -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - returns a string with every character doubled
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - return a string
+
+Test Cases:
+repeater('Hello') == "HHeelllloo"
+repeater("Good job!") == "GGoooodd  jjoobb!!"
+repeater('') == ''
+
+DATA STRUCTURE
+- Use string for input and ouput
+- possible use array for character storage and manipulation
+
+ALGORITHM
+- receive string into method
+- create empty array
+- iterate over string
+  - insert current character twice into array
+- join array into string and return
+
+
+- #8 Double Char (Part 2) -
+UNDERSTAND PROBLEM
+Notes:
+- write a method the same as problem 7 except for
+  - only double consonants
+  - do not double vowels, digits, punctuation, and whitespace
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - return a string
+
+Test Cases:
+double_consonants('String') == "SSttrrinngg"
+double_consonants("Hello-World!") == "HHellllo-WWorrlldd!"
+double_consonants("July 4th") == "JJullyy 4tthh"
+double_consonants('') == ""
+
+DATA STRUCTURE
+- Use string
+- Use array
+
+ALGORITHM
+- Same as problem #7 but only double the char insertion if
+it is a consonant
+
+
+- #9 Convert number to reversed array of digits -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a positive integer
+  - returns that integer with digits reversed
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - an integer
+- Output
+  - reversed integer
+
+Test Cases:
+reversed_number(12345) == 54321
+reversed_number(12213) == 31221
+reversed_number(456) == 654
+reversed_number(12000) == 21 # Note that zeros get dropped!
+reversed_number(1) == 1
+
+DATA STRUCTURE
+- Use Number for input and return
+- Use String for digit manipulation?
+
+ALGORITHM
+- receive integer into method
+- convert integer to string
+- reverse the string and convert back to integer
+- return reversed integer
+
+
+- #10 Get The Middle Character -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a non-empty string
+  - returns the middle character(s) from the string
+- include whitespace in the count
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - return middle character(s) from string
+
+Test Cases:
+center_of('I love ruby') == 'e'
+center_of('Launch School') == ' '
+center_of('Launch') == 'un'
+center_of('Launchschool') == 'hs'
+center_of('x') == 'x'
+
+DATA STRUCTURE
+- Use string for input and return
+- possibly use Array for iterating over chars
+
+ALGORITHM
+- receive string into method
+- set middle_char variable to the middle char of the string
+if string is an odd size
+  - set it to two middle chars if string is even size
+- return middle_char
