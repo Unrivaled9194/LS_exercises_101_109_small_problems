@@ -1,0 +1,345 @@
+- #1 Welcome Stranger -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that
+  - receives two arguments. An Array and a Hash
+  - Array contains: 2 or more elements that when combined with spaces
+  will produce a persons name
+  - Hash contains: 2 keys, :title and :occupation and their values
+  - Return a greeting that uses the full name and person's title
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - Array containing persons name
+  - Hash containing persons title and occupation
+- Output
+  - A string containing the contents of the array and hash
+
+Test Cases:
+greetings(['John', 'Q', 'Doe'], { title: 'Master', occupation: 'Plumber' })
+=> Hello, John Q Doe! Nice to have a Master Plumber around.
+
+DATA STRUCTURE
+- Use Array for name storage
+- Use Hash for title and occupation storage
+- Use string for output greeting
+
+ALGORITHM
+- receive Array and Hash into method
+- combine elements from hash and array in a greeting and return
+
+
+- #2 Double Double -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a number
+  - returns the number doubled unless:
+    - the number is a double number
+- a double number is when a numbers digits on the left side are exactly the
+same as on the right
+  - i.e. 44, 3333, 103103, 7676
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a number
+- Output
+  - a number
+
+Test Cases:
+twice(37) == 74
+twice(44) == 44
+twice(334433) == 668866
+twice(444) == 888
+twice(107) == 214
+twice(103103) == 103103
+twice(3333) == 3333
+twice(7676) == 7676
+twice(123_456_789_123_456_789) == 123_456_789_123_456_789
+twice(5) == 10
+
+DATA STRUCTURE
+- use number for input and output
+- use String for character comparison
+
+ALGORITHM
+- receive number into method
+- convert number to string
+- IF the left digits == the right digits
+  - convert back to integer and return
+- ELSE
+  - convert to integer, double the number and return
+
+
+- #3 Always Return Negative -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a number
+  - returns the negative of the number if it is positive
+  - returns the same number if negative
+  - returns 0 if 0
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  -
+- Output
+  -
+
+Test Cases:
+negative(5) == -5
+negative(-3) == -3
+negative(0) == 0
+
+DATA STRUCTURE
+
+ALGORITHM
+
+
+- #4 Counting Up -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives an integer
+  - returns an array of integers in sequence from 1 to the received integer
+- assume the integer will be valid and greater than 0
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a positive integer
+- Output
+  - an array of integers
+
+Test Cases:
+sequence(5) == [1, 2, 3, 4, 5]
+sequence(3) == [1, 2, 3]
+sequence(1) == [1]
+
+DATA STRUCTURE
+- use Number for input and arrays elements
+- Use Array for return
+
+ALGORITHM
+- receive integer into method
+- set a counter variable to 1
+- loop as many times as the received integer
+  - add the current variable value into the array
+  - increment the counter by 1
+- return the array
+
+
+- #5 Uppercase Check -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - returns true if all alphabetic characters are uppercase
+  - returns false otherwise
+- ignore non alphabetic chars
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - true or false
+
+Test Cases:
+uppercase?('t') == false
+uppercase?('T') == true
+uppercase?('Four Score') == false
+uppercase?('FOUR SCORE') == true
+uppercase?('4SCORE!') == true
+uppercase?('') == true
+
+DATA STRUCTURE
+- Use string for input
+- possibly use Array for data filtering
+- use boolean for return
+
+ALGORITHM
+- receive string into method
+- put all alphabetic chars into an array
+- IF all chars in the array are uppercase then return true
+- ELSE return false
+
+
+- #6 How Long Are You? -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a string
+  - returns an Array that contains:
+    - every word from the string with an appended space and
+    length of the word
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a string
+- Output
+  - an array of strings
+
+Test Cases:
+word_lengths("cow sheep chicken") == ["cow 3", "sheep 5", "chicken 7"]
+
+word_lengths("baseball hot dogs and apple pie") ==
+  ["baseball 8", "hot 3", "dogs 4", "and 3", "apple 5", "pie 3"]
+
+word_lengths("It ain't easy, is it?") == ["It 2", "ain't 5", "easy, 5", "is 2", "it? 3"]
+
+word_lengths("Supercalifragilisticexpialidocious") ==
+  ["Supercalifragilisticexpialidocious 34"]
+
+word_lengths("") == []
+
+DATA STRUCTURE
+- use string for input and for array elements
+- use Array for return
+
+ALGORITHM
+- receive string into method
+- #split the string into an array
+- iterate through the array
+  - count the number of chars for the current word and append the string
+  representative of the number with a space in between
+- return the array of strings
+
+
+- #7 Name Swapping -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives a first name, space, and last name as a single string
+  - returns a string like this: last name, comma, space, first name
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - a name string
+- Output
+  - reversed name string
+
+Test Cases:
+swap_name('Joe Roberts') == 'Roberts, Joe'
+
+DATA STRUCTURE
+- use string for input and output
+- use Array for re-arranging words
+
+ALGORITHM
+- receive string into method
+- convert string to array
+- return last element then a comma then first name as a single string
+
+
+- #8 Sequence Count -
+UNDERSTAND PROBLEM
+Notes:
+- create a method that:
+  - receives 2 integers as arguments
+    - 1st is a count
+    - 2nd is the first number of the sequence
+  - return an Array that contains the number of elements from the count integer
+    - the value of each element will be multiples of the starting number
+- assume count integer will alway be >= 0
+- starting number can be any integer value
+- if count is 0 return an empty array
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - two integers
+- Output
+  - return array of integers
+
+Test Cases:
+sequence(5, 1) == [1, 2, 3, 4, 5]
+sequence(4, -7) == [-7, -14, -21, -28]
+sequence(3, 0) == [0, 0, 0]
+sequence(0, 1000000) == []
+
+DATA STRUCTURE
+- Use Number for input
+- Use Array for return
+
+ALGORITHM
+- receive integers into method
+- crate empty array
+- loop received count integer times
+  - insert starting number into array
+  - add starting number to last inserted value to get next value to insert
+- return array
+
+
+- #9 Grade Book -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that
+  - receives 3 number arguments representing grades
+  - calculates the average of the three grades
+  - returns the letter value associated with the average grade
+- all input grades will be between 0 and 100
+- Grade chart:
+  Numerical Score Letter	Grade
+  90 <= score <= 100	    'A'
+  80 <= score < 90	      'B'
+  70 <= score < 80	      'C'
+  60 <= score < 70	      'D'
+  0 <= score < 60	        'F'
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - 3 number grades
+- Output
+  - 1 letter grade
+
+Test Cases:
+get_grade(95, 90, 93) == "A"
+get_grade(50, 50, 95) == "D"
+
+DATA STRUCTURE
+- use Number for input and average calculation
+- Use string for return letter grade
+
+ALGORITHM
+- receive numbers into method
+- calculate average of grades by: (grade1 + grade2 + grade3) / 3
+- using a case statement return the appropriate letter grade based on the
+grade chart
+
+
+- #10 Grocery List -
+UNDERSTAND PROBLEM
+Notes:
+- write a method that:
+  - receives an array of fruits with quantities
+  - returns an array with the correct number of each fruit
+
+EXAMPLES / TEST CASES
+Input / Output:
+- Input
+  - an array
+- Output
+  - return an array
+
+Test Cases:
+buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]]) ==
+  ["apples", "apples", "apples", "orange", "bananas","bananas"]
+
+DATA STRUCTURE
+- use array for input, element manipulation, and return
+
+ALGORITHM
+- receive array into method
+- create empty array
+- iterate over the input array
+  - iterate over each sub-array
+    - insert the type of fruit into the new array each time through the
+    iteration
+- return the new array 
